@@ -91,7 +91,7 @@ class TemplateData(object):
     2: 'error',
     }
 
-    DEFAULT_TITLE = 'Unit Test Report'
+    DEFAULT_TITLE = 'Broadway Test Report'
     DEFAULT_DESCRIPTION = ''
 
     # ------------------------------------------------------------------------
@@ -602,7 +602,7 @@ class HtmlOutput(Plugin):
         tid = (n == 0 and 'p' or 'f') + 't%s.%s' % (cid+1,tid+1)
         name = t.id().split('.')[-1]
         doc = t.shortDescription() or ""
-        desc = doc and ('%s: %s' % (name, doc)) or name
+        desc = doc and ('%s' % (doc)) or name
         tmpl = has_output and TemplateData.REPORT_TEST_WITH_OUTPUT_TMPL or TemplateData.REPORT_TEST_NO_OUTPUT_TMPL
 
         # Comments below from the original source project.
